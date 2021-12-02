@@ -6,15 +6,15 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:42:57 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/08 15:47:30 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:42:05 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int arg)
+int	ft_isalpha(int c)
 {
-	if (arg >= 65 && arg <= 90)
+	if (c >= 65 && c <= 90)
 		return (1);
-	else if (arg >= 97 && arg <= 122)
+	else if (c >= 97 && c <= 122)
 		return (2);
 	else
 		return (0);

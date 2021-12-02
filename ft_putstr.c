@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:25:52 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/04 19:13:32 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/11/25 17:06:50 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr(char	const *s)
 {
 	int	len;
 
+	if (s == NULL)
+		return ;
 	len = ft_strlen(s);
 	write(1, &*s, len);
 }

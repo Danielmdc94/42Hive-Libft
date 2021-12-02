@@ -6,20 +6,20 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 17:08:17 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/08 14:53:34 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:14:24 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char	const *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (src[i] != '\0')
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	dst[i] = '\0';
+	return (dst);
 }

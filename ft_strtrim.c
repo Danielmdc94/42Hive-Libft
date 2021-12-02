@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:28:05 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:14 by dpalacio         ###   ########.fr       */
+/*   Created: 2021/11/29 13:28:44 by dpalacio          #+#    #+#             */
+/*   Updated: 2021/11/29 16:47:48 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strtrim(char const *s)
 {
-	int		i;
-	char	*s;
-	int		len;
+	char	*dst;
+	size_t	i;
+	size_t	len;
+	size_t	start;
+	size_t	end;
 
-	len = ft_strlen(s1);
-	i = 0;
-	s = (char *)malloc(len * sizeof (char) + 1);
 	if (s == NULL)
-		return (0);
-	while (s1[i] != '\0')
-	{
-		s[i] = s1[i];
+		return (NULL);
+	i = 0;
+	len = 0;
+	start = 0;
+	end = ft_strlen(s);
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
-	}
-	s[i] = '\0';
-	return (s);
+	start = i;
+	i = ft_strlen(s) - 1;
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && i > start)
+		i--;
+	end = i;
+	len = end - start + 1;
+	dst = ft_strsub(s, start, len);
+	return (dst);
 }

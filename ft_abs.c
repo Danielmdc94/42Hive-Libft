@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:28:05 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:14 by dpalacio         ###   ########.fr       */
+/*   Created: 2021/11/30 16:54:57 by dpalacio          #+#    #+#             */
+/*   Updated: 2021/11/30 17:06:16 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-char	*ft_strdup(const char *s1)
+int	ft_abs(int i)
 {
-	int		i;
-	char	*s;
-	int		len;
-
-	len = ft_strlen(s1);
-	i = 0;
-	s = (char *)malloc(len * sizeof (char) + 1);
-	if (s == NULL)
-		return (0);
-	while (s1[i] != '\0')
-	{
-		s[i] = s1[i];
-		i++;
-	}
-	s[i] = '\0';
-	return (s);
+	if (i < 0)
+		return (-i);
+	else
+		return (i);
 }

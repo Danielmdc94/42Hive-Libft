@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:57:53 by dpalacio          #+#    #+#              #
-#    Updated: 2021/11/17 20:26:20 by dpalacio         ###   ########.fr        #
+#    Updated: 2021/11/30 19:56:15 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,22 @@ SRC = ft_memset.c\
 	  ft_isprint.c\
 	  ft_toupper.c\
 	  ft_tolower.c\
+	  ft_memalloc.c\
+	  ft_memdel.c\
+	  ft_strnew.c\
+	  ft_strdel.c\
+	  ft_strclr.c\
+	  ft_striter.c\
+	  ft_striteri.c\
+	  ft_strmap.c\
+	  ft_strmapi.c\
+	  ft_strequ.c\
+	  ft_strnequ.c\
+	  ft_strsub.c\
+	  ft_strjoin.c\
+	  ft_strtrim.c\
+	  ft_strsplit.c\
+	  ft_itoa.c\
 	  ft_putchar.c\
 	  ft_putstr.c\
 	  ft_putendl.c\
@@ -47,7 +63,14 @@ SRC = ft_memset.c\
 	  ft_putchar_fd.c\
 	  ft_putstr_fd.c\
 	  ft_putendl_fd.c\
-	  ft_putnbr_fd.c
+	  ft_putnbr_fd.c\
+	  \
+	  ft_isspace.c\
+	  ft_islower.c\
+	  ft_isupper.c\
+	  ft_abs.c\
+
+
 INCLUDE = ./
 
 all: $(NAME)
@@ -66,8 +89,8 @@ fclean: clean
 
 re: fclean all
 
-testft:
-	cp ./test/strlcat_main.c ./
+testobsolete:
+	cp ./test/obsolete/strsplit_main.c ./
 	gcc $(FLAGS) -L . -lft *_main.c
 
 testclean:

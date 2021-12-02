@@ -6,13 +6,13 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:12:10 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/08 16:20:58 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:42:29 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int arg)
+int	ft_isdigit(int c)
 {
-	if (arg >= 48 && arg <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);

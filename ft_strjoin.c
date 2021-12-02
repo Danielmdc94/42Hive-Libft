@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:28:05 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/22 17:12:14 by dpalacio         ###   ########.fr       */
+/*   Created: 2021/11/29 13:11:45 by dpalacio          #+#    #+#             */
+/*   Updated: 2021/11/29 16:48:10 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	char	*s;
-	int		len;
+	char	*dst;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	len = ft_strlen(s1);
-	i = 0;
-	s = (char *)malloc(len * sizeof (char) + 1);
-	if (s == NULL)
-		return (0);
-	while (s1[i] != '\0')
-	{
-		s[i] = s1[i];
-		i++;
-	}
-	s[i] = '\0';
-	return (s);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	dst = (char *)ft_memalloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (dst == NULL)
+		return (NULL);
+	ft_strcpy(dst, s1);
+	ft_strcat(dst, s2);
+	return (dst);
 }
