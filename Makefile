@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:57:53 by dpalacio          #+#    #+#              #
-#    Updated: 2021/12/06 11:48:35 by dpalacio         ###   ########.fr        #
+#    Updated: 2021/12/06 20:02:08 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,11 +84,9 @@ INCLUDE = ./
 
 all: $(NAME)
 
-$(NAME): c_to_o
-	ar rc $(NAME) *.o
-
-c_to_o:
+$(NAME):
 	gcc -c $(FLAGS) -I$(INCLUDE) $(SRC)
+	ar rc $(NAME) *.o
 
 clean:
 	rm -f *.o
@@ -97,11 +95,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-testobsolete:
-	cp ./test/obsolete/strsplit_main.c ./
-	gcc $(FLAGS) -L . -lft *_main.c
-
-testclean:
-	rm *_main.c
-	rm -f a.out
