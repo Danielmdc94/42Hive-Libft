@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 13:11:45 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/12/02 16:44:47 by dpalacio         ###   ########.fr       */
+/*   Created: 2021/12/02 13:25:46 by dpalacio          #+#    #+#             */
+/*   Updated: 2021/12/02 18:44:59 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*dst;
-	size_t	s1_len;
-	size_t	s2_len;
+	t_list	*lst;
 
-	if (s1 == NULL || s2 == NULL)
+	lst = (t_list *)malloc(sizeof(t_list));
+	if (!lst)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	dst = (char *)ft_memalloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (dst == NULL)
-		return (NULL);
-	ft_strcpy(dst, s1);
-	ft_strcat(dst, s2);
-	return (dst);
+	if (!content || content_size == 0)
+	{
+		lst->content = NULL;
+		lst->content_size = 0;
+	}
+	else
+	{
+		lst->content = (void *)malloc(content_size);
+		if (!lst->content)
+			return (NULL);
+		ft_memcpy(lst->content, content, content_size);
+		lst->content_size = content_size;
+	}
+	lst->next = NULL;
+	return (lst);
 }

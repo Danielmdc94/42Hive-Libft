@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 12:24:09 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/12/06 16:45:10 by dpalacio         ###   ########.fr       */
+/*   Created: 2021/12/02 16:48:14 by dpalacio          #+#    #+#             */
+/*   Updated: 2021/12/02 16:50:28 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+int	ft_count_words(char const *s, char c)
 {
-	return (ft_memchr(s, c, ft_strlen(s) + 1));
+	int	i;
+	int	words;
+
+	i = 0;
+	words = 0;
+	while (*s)
+	{
+		if (i == 1 && *s == c)
+			i = 0;
+		if (i == 0 && *s != c)
+		{
+			i = 1;
+			words++;
+		}
+		s++;
+	}
+	return (words);
 }

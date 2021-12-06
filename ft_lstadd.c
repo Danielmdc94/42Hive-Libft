@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   lstadd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 12:24:09 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/12/06 16:45:10 by dpalacio         ###   ########.fr       */
+/*   Created: 2021/12/02 20:22:25 by dpalacio          #+#    #+#             */
+/*   Updated: 2021/12/02 20:49:12 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	return (ft_memchr(s, c, ft_strlen(s) + 1));
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

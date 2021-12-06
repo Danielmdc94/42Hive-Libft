@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 12:24:09 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/12/06 16:45:10 by dpalacio         ###   ########.fr       */
+/*   Created: 2021/12/02 18:46:55 by dpalacio          #+#    #+#             */
+/*   Updated: 2021/12/02 19:48:06 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	return (ft_memchr(s, c, ft_strlen(s) + 1));
+	if (!alst || !del)
+		return ;
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

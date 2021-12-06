@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 16:52:15 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/11/30 18:18:31 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/12/02 18:33:51 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-static int	count_elem(char const *s, char c)
-{
-	int	i;
-	int	elem_n;
-
-	i = 0;
-	elem_n = 0;
-	while (*s)
-	{
-		if (i == 1 && *s == c)
-			i = 0;
-		if (i == 0 && *s != c)
-		{
-			i = 1;
-			elem_n++;
-		}
-		s++;
-	}
-	return (elem_n);
-}
-
-char	**cpy_dst(char **dst, char const *s, char c, int elem)
+static char	**cpy_dst(char **dst, char const *s, char c, int elem)
 {
 	int	i;
 	int	j;
@@ -51,6 +30,14 @@ char	**cpy_dst(char **dst, char const *s, char c, int elem)
 		while (s[i] && s[i] != c)
 			i++;
 		dst[j] = ft_strsub(s, start, i - start);
+		if (!dst[j])
+		{
+			while (j-- >= -1)
+			{
+				free(dst[j]);
+				return (NULL);
+			}
+		}
 		i++;
 	}
 	return (dst);
@@ -63,7 +50,7 @@ char	**ft_strsplit(char const *s, char c)
 
 	if (s == NULL || !c)
 		return (NULL);
-	elem = count_elem(s, c);
+	elem = ft_count_words(s, c);
 	dst = (char **)ft_memalloc(sizeof(char *) * (elem + 1));
 	if (dst == NULL)
 		return (NULL);

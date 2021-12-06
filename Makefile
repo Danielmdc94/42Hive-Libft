@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:57:53 by dpalacio          #+#    #+#              #
-#    Updated: 2021/11/30 19:56:15 by dpalacio         ###   ########.fr        #
+#    Updated: 2021/12/06 11:48:35 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC = ft_memset.c\
 	  ft_isprint.c\
 	  ft_toupper.c\
 	  ft_tolower.c\
+	  \
 	  ft_memalloc.c\
 	  ft_memdel.c\
 	  ft_strnew.c\
@@ -65,11 +66,19 @@ SRC = ft_memset.c\
 	  ft_putendl_fd.c\
 	  ft_putnbr_fd.c\
 	  \
+	  ft_lstnew.c\
+	  ft_lstdelone.c\
+	  ft_lstdel.c\
+	  ft_lstadd.c\
+	  ft_lstiter.c\
+	  ft_lstmap.c\
+	  \
 	  ft_isspace.c\
 	  ft_islower.c\
 	  ft_isupper.c\
 	  ft_abs.c\
-
+	  ft_count_words.c\
+	  ft_lstadd_back.c\
 
 INCLUDE = ./
 
