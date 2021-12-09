@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:17:58 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/12/06 19:26:43 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/12/09 13:46:42 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char*s2, size_t n);
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -68,13 +68,13 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
-void	ft_putchar(char	const c);
-void	ft_putstr(char	const *s);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
-void	ft_putchar_fd(char	const c, int fd);
-void	ft_putstr_fd(char	const *s, int fd);
-void	ft_putendl_fd(char	const *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 t_list	*ft_lstnew(void const *content, size_t content_size);

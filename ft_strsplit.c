@@ -6,13 +6,22 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 16:52:15 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/12/02 18:33:51 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/12/09 12:54:41 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
 #include "libft.h"
+
+static void	free_ptr(char **dst, int j)
+{
+	while (j-- >= -1)
+	{
+		free(dst[j]);
+	}
+	free(dst);
+}
 
 static char	**cpy_dst(char **dst, char const *s, char c, int elem)
 {
@@ -32,11 +41,8 @@ static char	**cpy_dst(char **dst, char const *s, char c, int elem)
 		dst[j] = ft_strsub(s, start, i - start);
 		if (!dst[j])
 		{
-			while (j-- >= -1)
-			{
-				free(dst[j]);
-				return (NULL);
-			}
+			free_ptr(dst, j);
+			return (NULL);
 		}
 		i++;
 	}
