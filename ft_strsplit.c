@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 16:52:15 by dpalacio          #+#    #+#             */
-/*   Updated: 2021/12/09 12:54:41 by dpalacio         ###   ########.fr       */
+/*   Updated: 2021/12/09 17:45:03 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	free_ptr(char **dst, int j)
 {
-	while (j-- >= -1)
+	while (j-- >= 0)
 	{
 		free(dst[j]);
 	}
