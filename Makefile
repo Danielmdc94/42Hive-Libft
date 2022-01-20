@@ -6,7 +6,7 @@
 #    By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:57:53 by dpalacio          #+#    #+#              #
-#    Updated: 2021/12/08 15:20:24 by dpalacio         ###   ########.fr        #
+#    Updated: 2022/01/20 15:39:09 by dpalacio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRC = ft_memset.c\
 	  ft_abs.c\
 	  ft_count_words.c\
 	  ft_lstadd_back.c\
+	  get_next_line.c\
 
 INCLUDE = ./
 
