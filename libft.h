@@ -6,7 +6,7 @@
 /*   By: dpalacio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:17:58 by dpalacio          #+#    #+#             */
-/*   Updated: 2022/03/14 11:19:35 by dpalacio         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:38:12 by dpalacio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int		ft_isspace(int c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_abs(int c);
+int		ft_atoi_base(const char *str, int str_base);
 int		ft_count_words(char const *s, char c);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 
